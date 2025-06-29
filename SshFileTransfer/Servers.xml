@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Servers>
+  <Server Description="GENERIC_SERVER_1" Host="192.168.1.10" Port="22">
+  
+    <Schedule StartTime="08:00" EndTime="18:00" Interval="10">
+      <CopyJob Description="GENERAL_FILES_OUT" Type="Out" Approver="USER_ID_A" CleanAtMidnight="true" CleanAfterTransfer="true">
+        <NetworkFolder>\\network_share_host\share_name\OUT_FOLDER$</NetworkFolder>
+        <RemoteFolder>/RemoteFolder/</RemoteFolder>
+      </CopyJob>
+      <CopyJob Description="GENERAL_FILES_IN" Type="In" Approver="USER_ID_A" CleanAtMidnight="true" CleanAfterTransfer="true">
+        <NetworkFolder>\\network_share_host\share_name\IN_FOLDER$</NetworkFolder>
+        <RemoteFolder>/RemoteFolder/</RemoteFolder>
+      </CopyJob>
+    </Schedule>
+
+    <Schedule StartTime="21:00" EndTime="21:00" Interval="0">
+      <CopyJob Description="DR_DOWNLOAD_DIR" Type="InDir" Approver="USER_ID_A" CleanAtMidnight="false" CleanAfterTransfer="false">
+        <NetworkFolder>C:\Localfolder</NetworkFolder>
+        <RemoteFolder>/RemoteFolder/</RemoteFolder>
+      </CopyJob>
+    </Schedule>
+
+  </Server>
+  <Server Description="GENERIC_SERVER_2_PROD" Host="192.168.1.20" Port="22">
+    <Schedule StartTime="22:00" EndTime="22:00" Interval="0">
+      <CopyJob Description="PROD_APP_UPLOAD" Type="OutDir" Approver="USER_ID_B" CleanAtMidnight="false" CleanAfterTransfer="false">
+        <NetworkFolder>C:\Localfolder</NetworkFolder>
+        <RemoteFolder>/RemoteFolder/</RemoteFolder>
+      </CopyJob>
+    </Schedule>
+  </Server>
+  <Server Description="GENERIC_SERVER_3_BACKUP" Host="192.168.1.30" Port="22">
+    <Schedule StartTime="08:00" EndTime="18:00" Interval="15">
+      <CopyJob Description="BACKUP_REPORTS" Type="Out" Approver="USER_ID_C" CleanAtMidnight="true" CleanAfterTransfer="true">
+        <NetworkFolder>\\network_share_host\share_name</NetworkFolder>
+        <RemoteFolder>/RemoteFolder</RemoteFolder>
+      </CopyJob>
+    </Schedule>    
+  </Server>
+</Servers>

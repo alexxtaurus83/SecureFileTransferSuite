@@ -1,4 +1,5 @@
 # SshFileTransfer Application
+This code is written to support my Attax AI engine Machine Learning project.
 
 ## Basic Functionality
 

@@ -39,8 +39,8 @@ namespace SshFileTransfer
                 if (credentials is null) continue; // Skip if no credentials found.
 
                 var foldersToClean = new List<TransferDetails>(); // List to hold folders marked for midnight cleaning.
-                // Decrypt the password using a utility (assuming csCrypt.Crypt.DecryptStringAes exists).
-                var pass = csCrypt.Crypt.DecryptStringAes(credentials.Password); // 
+                // Decrypt the password using a utility 
+                var pass = Crypt.DecryptStringAes(credentials.Password); // 
 
                 // Iterate through each schedule defined for the current server.
                 foreach (var schedule in server.Schedule) // 

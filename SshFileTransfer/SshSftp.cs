@@ -2,8 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Security; // Not explicitly used in the provided code, but often related to SSL/TLS.
-using System.Security.Cryptography.X509Certificates; // Not explicitly used, but related to certificates.
 using System.Threading;
 using HeyRed.Mime; // Used for MIME type detection.
 using Renci.SshNet; // Core library for SSH, SCP, and SFTP.
